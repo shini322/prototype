@@ -4,10 +4,9 @@ let text = '.product-item__text';
 let link = $('.product-item__link');
 
 $(input).each(function(){
-    if($(this).prop('disabled') == true){
-        let subTitle = $(this).parent().find('.product-item__subtitle').text()
-        $(this).parent().addClass('disabled');
-        $(this).parent().parent().find(text).text(`Печалька, ${subTitle} закончился`);
+    if($(this).prop('disabled') == true){        
+        $(this).parent().addClass('disabled');        
+        $(this).parent().parent().addClass('disabled');        
      }
     if($(this).prop('checked') == true){
         $(this).parent().addClass('checked');
@@ -26,15 +25,20 @@ link.click(function(){
     inputProp.prop("checked", !inputProp.prop("checked"))
 });
 
+
 label.mouseleave(function(){
     if($(this).hasClass('checked')){
-        $(this).find('.product-item__header').text('Котэ не одобряет?').css('color', '#d91667');
+        $(this).addClass('selected-hover');    
     }
 });
-
 label.mouseenter(function(){
     if($(this).hasClass('checked')){
-        $(this).find('.product-item__header').text('Сказочное заморское яство').css('color', '#666666');
+        $(this).removeClass('selected-hover');    
     }
 });
+// label.mouseenter(function(){
+//     if($(this).hasClass('checked')){
+//         $(this).find('.product-item__header').text('Сказочное заморское яство').css('color', '#666666');
+//     }
+// });
 

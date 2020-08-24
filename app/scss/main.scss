@@ -67,6 +67,9 @@ a{
         @include for-lg{
             margin-right: -30px;
         }
+        @include for-sm{
+            margin-right: 0;
+        }
     }
     &__container{
         margin-bottom: 20px;
@@ -81,6 +84,7 @@ a{
         }
         @include for-sm{
             width: 100%;
+            padding-right: 0;
         }
     }
     
@@ -137,7 +141,14 @@ a{
         font-size: 16px;
         line-height: 20px;
         color: $grey;
-        
+        &--selected-hover{
+            display: none;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+            margin-bottom: 8px;            
+            color: $pink;
+        }
     }
     &__title{
         display: block;
@@ -166,7 +177,8 @@ a{
     }
     &__img{
         max-width: 100%;
-        height: 100%;
+        width: 312px;
+        height: 272px;
         border-radius: 0 0 0 10px;
     }
     &__weight{
@@ -202,6 +214,9 @@ a{
             display: none;
         }
     }
+    &__text-disabled{
+        display: none;
+    }
     &__link{
         color: $blue;
         border-bottom: 1px dashed $blue;
@@ -229,15 +244,27 @@ a{
     &__label.checked + &__text + &__text-selected{
         display: block;
     }
+    &__label.selected-hover{
+        .product-item__header{
+            display: none;
+        }
+        .product-item__header--selected-hover{
+            display: block;
+        }
+    }
     &__label.disabled{
         background: linear-gradient(135deg, transparent 34px, $grey 0);
+        cursor: auto;
         .product-item__weight{
             background-color: $grey;
         }
         .product-item__text{
+            display: none;
             color: $yellow;
         }
-        
+        .product-item__text-disabled{
+            display: block;
+        }
         &:before{
             content: "";
             position: absolute;
@@ -250,7 +277,14 @@ a{
             z-index: 20;
         }
     }
-    &__label.disabled + &__text{
+    
+}
+.product-item.disabled{
+    .product-item__text{
+        display: none;
+    }
+    .product-item__text-disabled{
+        display: block;
         color: $yellow;
     }
 }
