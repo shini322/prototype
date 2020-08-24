@@ -1,0 +1,36 @@
+$black: #000000;
+$grey: #666666;
+$blue: #1698d9;
+$blue-hover: #2ea8e5;
+$pink: #d91667;
+$yellow: #ffff66;
+$white: #fff;
+@mixin for-xl {
+    @media (max-width: 1450px) { @content; }
+  }
+@mixin for-lg {
+    @media (max-width: 1150px) { @content; }
+ }
+
+  @mixin for-md {
+    @media (max-width: 1023px) { @content; }
+    
+  }
+
+  @mixin for-sm {
+    @media (max-width: 768px) { @content; }
+  }
+  @mixin for-tiny-tablet {
+    @media (max-width: 650px) { @content; }
+  }
+  @mixin for-md-mob{
+    @media (max-width: 600px) { @content; }
+  }
+  @mixin for-tiny-mob {
+    @media (max-width: 500px) { @content; }
+  }
+
+
+  @mixin for-lit-mob {
+    @media (max-width: 400px) { @content; }
+    }
